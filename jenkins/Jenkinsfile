@@ -14,11 +14,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-        post {
-            success {
-                slackSend "Build deployed successfully - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-            }
-        }
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
@@ -29,11 +24,6 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
-            }
-        }
-        post {
-            failure {
-                slackSend failOnError:true message:"Build failed  - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
             }
         }
     }
