@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:lts-buster-slim'
-            args '--network jnet -p 3000:3000'
+            args '-p 3000:3000'
         }
     }
     environment {
