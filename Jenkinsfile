@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh (script: 'npm install --loglevel verbose', returnStdout: true, returnStatus: true)
+                sh (script: 'npm install')
             }
         }
         stage('Test') {
