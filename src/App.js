@@ -11,7 +11,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React para los amigos de BBVA</h1>
         </header>
         <p className="App-intro">
-          Hola mundo para los amigos de BBVA! 
+          Hola mundo para los amigos de BBVA de Agosto! 
         </p>
       </div>
     );
